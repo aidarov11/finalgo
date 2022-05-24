@@ -12,8 +12,6 @@ import (
 func (h *Handler) signUp(c *gin.Context) {
 	var input todo.User
 
-	fmt.Print(input)
-
 	if err := c.BindJSON(&input); err != nil {
 		newErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
